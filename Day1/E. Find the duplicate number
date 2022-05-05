@@ -1,1 +1,30 @@
 
+Logic:
+
+ans array make
+
+->> take one array of size n and then go throught the whole question array and do +1 to that palce in answer array;
+->> If the answer that index contains 1 already then that number is duplicate simple man!!!!!!!!!
+
+
+Code:
+
+class Solution {
+    public int findDuplicate(int[] a) {
+        
+        int len=a.length;
+        
+        int[] demo=new int[len];
+        
+        for(int i=0;i<len;i++){
+            
+            if(demo[a[i]-1]!=1){
+                demo[a[i]-1]++;
+            }else{
+                return a[i];
+            }
+        }
+        
+        return 0;
+    }
+}
