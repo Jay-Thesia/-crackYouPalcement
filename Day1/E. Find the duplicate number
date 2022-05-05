@@ -1,5 +1,7 @@
 Code:
 
+Worst1(using extra array) O(n):
+
 class Solution {
     public int findDuplicate(int[] a) {
         
@@ -20,8 +22,10 @@ class Solution {
     }
 }
 
-
+Worst2(using hashset) O(n):
 Logic:
+
+Best1(constant space)
 
 ans array make
 
