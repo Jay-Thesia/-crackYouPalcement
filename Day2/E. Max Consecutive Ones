@@ -1,0 +1,32 @@
+Logic:
+
+--> if there is a one add count and upgrade the ans variable which store the max consecutive ones;
+--> if there is a zero than make the count=1.
+--> return ans the at the end of the array.
+
+
+Code: 
+
+--> T.c. = O(n) , S.c = O(1)
+
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        
+        int one=0;
+        int max_one=0;
+        int n=nums.length;
+        
+        
+        for(int i=0;i<n;i++){
+            if(nums[i]==1){
+                one++;
+                max_one=Math.max(max_one,one);
+            }else{
+                one=0;
+            }
+        }
+        
+        return max_one;
+    }
+}
