@@ -9,6 +9,7 @@ Code:
 
 --> T.c. = O(n) , S.c = O(1)
 
+Solution 1:
 
 class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
@@ -27,6 +28,33 @@ class Solution {
             }
         }
         
+        return max_one;
+    }
+}
+
+Solution 2:
+
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        
+        int one=0;
+        int max_one=0;
+        int n=nums.length;
+        
+        
+        for(int i=0;i<n;i++){
+            if(nums[i]==1){
+                one++;
+               
+            }else{
+                max_one=Math.max(max_one,one);
+                one=0;
+            }
+        }
+        
+        if(nums[n-1]==1){
+            max_one=Math.max(max_one,one);
+        }
         return max_one;
     }
 }
