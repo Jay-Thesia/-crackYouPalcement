@@ -1,0 +1,52 @@
+Logic:
+
+--> one we need for variables left,top,right,bottom
+--> change it's position using for loop and that's it.
+
+Code: T.C.=O(m*n) , S.C=O(1)
+
+class Solution {
+    public List<Integer> spiralOrder(int[][] matrix) {
+        
+        List<Integer> list=new ArrayList();
+        
+        
+        int left=0;
+        int top=matrix[0].length-1;
+        int right=matrix.length-1;
+        int bottom=0;
+        
+        while(left<=right && bottom<=top){
+        
+        //print left to right;
+            for(int i=left; i<=top;i++){
+                list.add(matrix[left][i]);
+            }
+            left++;
+           
+        //print form top to right
+            for(int i=left;i<=right;i++){
+                list.add(matrix[i][top]);
+            }
+            top--;
+            
+            
+            if(left<=right && bottom<=top){
+            for(int i=top;i>=bottom;i--){
+                list.add(matrix[right][i]);
+            }
+            right--;
+            
+            for(int i=right;i>=left;i--){
+                list.add(matrix[i][bottom]);
+            }
+            bottom++;
+        }
+        
+        }
+        
+        return list;
+    }
+}
+ 
+ 
